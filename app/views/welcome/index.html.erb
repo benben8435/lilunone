@@ -1,0 +1,34 @@
+<style>
+  body 
+  {
+    background-image: url(/assets/welcome_bg.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .blog
+  {
+    background-image: url(/assets/logo.png);
+    display: block;
+    position: absolute;
+    top: 5%; left: 15%;
+    width: 118px; height: 255px;
+  }
+  .blog:hover
+  {
+    background-image: url(/assets/logo_hover.png);
+    display: block;
+    position: absolute;
+    top: 5%; left: 15%;
+    width: 118px; height: 255px;
+  }
+  .blog:hover a
+  {
+    display: block;
+    width: 100%; height: 100%;
+  }
+</style>
+<embed src="/assets/gsls.mp3" width=0 height=0 type=audio/mpeg>
+<div class="blog">
+<%= link_to "", controller: 'articles' %>
+</div>

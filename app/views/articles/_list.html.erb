@@ -1,0 +1,15 @@
+<% articles.each do |article| %>
+  <li>
+    <div class="thumbnail">
+    <%= link_to image_tag(article.photo.url(:small)), 
+      article_path(article) %>
+    <span>
+      <% if article.title == "" %>
+        <%= article.text %>
+      <% else %>
+        <%= article.title %>
+      <% end %>
+    </span>
+    </div>
+  </li>
+<% end %>

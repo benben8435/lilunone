@@ -1,0 +1,36 @@
+<%= mp3_player_headers %>
+<p>
+  <%= image_tag @article.photo.url(:small) %>
+</p>
+
+<p> 
+<% if @article.audio_file_name != nil %>
+<%= mp3_player @article.audio.url %>
+<% end %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+<p>
+  <strong>Tags:</strong>
+  <% @article.tag_list.each do |info_tag| %>
+    #<%= info_tag %>&nbsp
+  <% end %>
+</p> 
+<p>
+  <strong>Text:</strong>
+  <%= @article.text %>
+</p>
+ 
+<h2>Comments</h2>
+<%= render @article.comments %>
+ 
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+ 
+<%= link_to 'Edit Article', edit_article_path(@article) %> |
+<%= link_to 'Destroy', article_path(@article),
+                      method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back to Articles', articles_path %>
