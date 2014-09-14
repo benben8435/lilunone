@@ -1,13 +1,15 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  <p>
-    <%= f.label :body %><br>
-    <%= f.text_area :body %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
+  <fieldset>
+    <legend class="text-center" style="font-size: 1.1rem; color:#AAAAAA">Creating Comments</legend>
+
+    <label>Commenter
+      <%= f.text_field :commenter %>
+    </label>
+    <label>Body
+      <%= f.text_area :body, rows: 10 %>
+    </label>
+    <p class="text-right" style="margin-top: 30px">
+      <%= f.submit " Submit " , class: 'button' %>
+    </p>
+  </fieldset>
 <% end %>

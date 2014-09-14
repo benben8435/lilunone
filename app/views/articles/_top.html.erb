@@ -1,0 +1,30 @@
+<div class="contain-to-grid">
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to image_tag("logo-hori.png", width: 110), root_path %></h1>
+    </li>
+  </ul>
+
+  
+  <section class="top-bar-section">
+    <% if @article != nil %>
+      <ul class="left" style="margin-left: 25px">
+        <li class="text-center" style="width: 104px"><%= link_to "返回", articles_path %></li>
+      </ul>
+    <% end %>
+
+    <ul class="right">
+      <li class="text-center" style="width: 104px"><%= link_to "新建", new_article_path %></li>
+      <% if @article != nil && @article.id != nil %>
+          <li class="text-center" style="width: 104px"><%= link_to "编辑", edit_article_path(@article) %></li>
+          <li class="text-center" style="width: 104px"><%= link_to "删除", article_path(@article),
+                      method: :delete, data: { confirm: 'Are you sure?' } %></li>
+
+          
+      <% end %>
+      
+    </ul>
+  </section>
+</nav>
+</div>

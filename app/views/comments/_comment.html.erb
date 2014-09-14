@@ -1,15 +1,14 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
- 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
- 
-<p>
-  <%= link_to 'Destroy Comment', [comment.article, comment],
+<p class="text-right" style="margin-bottom: 0px; margin-top: 0px; padding-bottom: 0px; padding-top: 0px;" >
+  
+  <%= link_to image_tag("delete.png", width:'25px'), [comment.article, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' } %>
 </p>
+<p>
+  <strong><%= comment.commenter %>:</strong>
+  <br>
+  <%= comment.body %>
+</p>
+<hr  style="width: 60%; margin-top: 40px" />
+ 
+

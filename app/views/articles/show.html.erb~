@@ -1,6 +1,21 @@
 <%= mp3_player_headers %>
 
-<%= render 'top' %>
+<div class="contain-to-grid">
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to image_tag("logo-hori.png", width: 110), root_path %></h1>
+    </li>
+  </ul>
+
+  <section class="top-bar-section">
+
+    <ul class="right">
+      <li><%= link_to  " ", new_article_path %></li>
+    </ul>
+  </section>
+</nav>
+</div>
 
 <br><br>
 <div class="row">
@@ -25,16 +40,17 @@
   <% @article.tag_list.each do |info_tag| %>
     #<%= info_tag %>&nbsp
   <% end %>
-  <br><br><br>
   <hr />
-  <% if @article.comments.empty? %>
-    <p style="color:#AAAAAA"><br>No Comments...</p>
+  <h3 class="subheader">Comments</h2>
+  <% if @article.comments == nil %>
+  hahaha
   <% end %>
   <%= render @article.comments %>
-  <br>
   <%= render "comments/form" %>
 </div>
 </div>
-<%= render 'footer' %> 
-
-
+ 
+<%= link_to 'Edit Article', edit_article_path(@article) %> |
+<%= link_to 'Destroy', article_path(@article),
+                      method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back to Articles', articles_path %>

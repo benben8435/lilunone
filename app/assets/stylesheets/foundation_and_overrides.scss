@@ -63,7 +63,7 @@
 // Since the typical default browser font-size is 16px, that makes the calculation for grid size.
 // If you want your base font-size to be different and not have it affect the grid breakpoints,
 // set $rem-base to $base-font-size and make sure $base-font-size is a px value.
-// $base-font-size: 100%;
+$base-font-size: 100%;
 
 // The $base-font-size is 100% while $base-line-height is 150%
 // $base-line-height: 150%;
@@ -100,7 +100,7 @@ $total-columns: 16;
 $body-bg: #F2EFEA;
 
 // $body-font-color: $jet;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
@@ -121,7 +121,7 @@ $primary-color: #616052;
 // $warning-color: #f08a24;
 // $info-color: #a0d3e8;
 
-// $white       : #FFFFFF;
+$white       : #FFFFFF;
 // $ghost       : #FAFAFA;
 // $snow        : #F9F9F9;
 // $vapor       : #F6F6F6;
@@ -129,7 +129,7 @@ $primary-color: #616052;
 // $silver      : #EFEFEF;
 // $smoke       : #EEEEEE;
 // $gainsboro   : #DDDDDD;
-// $iron        : #CCCCCC;
+$iron        : #CCCCCC;
 // $base        : #AAAAAA;
 // $aluminum    : #999999;
 // $jumbo       : #888888;
@@ -137,9 +137,9 @@ $primary-color: #616052;
 // $steel       : #666666;
 // $charcoal    : #555555;
 // $tuatara     : #444444;
-// $oil         : #333333;
+$oil         : #333333;
 // $jet         : #222222;
-// $black       : #000000;
+$black       : #000000;
 
 // We use these to make sure border radius matches unless we want it different.
 // $global-radius: 3px;
@@ -236,7 +236,7 @@ $header-bottom-margin: 2.5rem;
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
 // $paragraph-font-weight: $font-weight-normal;
-// $paragraph-font-size: 1rem;
+$paragraph-font-size: 1.2rem;
 // $paragraph-line-height: 1.6;
 $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);
@@ -261,18 +261,18 @@ $paragraph-margin-bottom: rem-calc(20);
 // $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 // We use these to style the <hr> element
-// $hr-border-width: 1px;
-// $hr-border-style: solid;
+$hr-border-width: 2px;
+$hr-border-style: dashed;
 // $hr-border-color: $gainsboro;
-// $hr-margin: rem-calc(20);
+$hr-margin: rem-calc(15);
 
 // We use these to style lists
 // $list-font-family: $paragraph-font-family;
-// $list-font-size: $paragraph-font-size;
+$list-font-size: $paragraph-font-size;
 // $list-line-height: $paragraph-line-height;
 $list-margin-bottom: $paragraph-margin-bottom;
 // $list-style-position: outside;
-$list-side-margin: 1.1rem;
+// $list-side-margin: 1.1rem;
 // $list-ordered-side-margin: 1.4rem;
 // $list-side-margin-no-bullet: 0;
 // $list-nested-margin: rem-calc(20);
@@ -616,7 +616,7 @@ $button-bg-color: $primary-color;
 
 // We use these to style the labels in different ways
 // $form-label-pointer: pointer;
-// $form-label-font-size: rem-calc(14);
+$form-label-font-size: rem-calc(18);
 // $form-label-font-weight: $font-weight-normal;
 // $form-label-line-height: 1.5;
 // $form-label-font-color: scale-color($black, $lightness: 30%);
@@ -626,7 +626,7 @@ $button-bg-color: $primary-color;
 // $input-font-color: rgba(0,0,0,0.75);
 // $input-font-size: rem-calc(14);
 // $input-bg-color: $white;
-// $input-focus-bg-color: scale-color($white, $lightness: -2%);
+ $input-focus-bg-color: scale-color($white, $lightness: 0%);
 // $input-border-color: scale-color($white, $lightness: -20%);
 // $input-focus-border-color: scale-color($white, $lightness: -40%);
 // $input-border-style: solid;
@@ -638,15 +638,15 @@ $button-bg-color: $primary-color;
 
 // We use these to style the fieldset border and spacing.
 // $fieldset-border-style: solid;
-// $fieldset-border-width: 1px;
+$fieldset-border-width: 2px;
 // $fieldset-border-color: $gainsboro;
-// $fieldset-padding: rem-calc(20);
-// $fieldset-margin: rem-calc(18 0);
+$fieldset-padding: rem-calc(50 50 10 50);
+$fieldset-margin: rem-calc(18 0);
 
 // We use these to style the legends when you use them
-// $legend-bg: $white;
-// $legend-font-weight: $font-weight-bold;
-// $legend-padding: rem-calc(0 3);
+$legend-bg: none;
+$legend-font-weight: none;
+$legend-padding: rem-calc(0 5);
 
 // We use these to style the prefix and postfix input elements
 // $input-prefix-bg: scale-color($white, $lightness: -5%);
@@ -948,12 +948,12 @@ $inline-list-bottom-margin: rem-calc(17);
 // 21. Panels
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-panel-classes: $include-html-classes;
+$include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-// $panel-bg: scale-color($white, $lightness: -5%);
-// $panel-border-style: solid;
-// $panel-border-size: 1px;
+$panel-bg: scale-color($white, $lightness: -5%);
+$panel-border-style: solid;
+$panel-border-size: 2px;
 
 // We use this % to control how much we darken things on hover
 // $panel-function-factor: -11%;
@@ -961,13 +961,13 @@ $inline-list-bottom-margin: rem-calc(17);
 
 // We use these to set default inner padding and bottom margin
 // $panel-margin-bottom: rem-calc(20);
-// $panel-padding: rem-calc(20);
+$panel-padding: rem-calc(60);
 
 // We use these to set default font colors
 // $panel-font-color: $oil;
 // $panel-font-color-alt: $white;
 
-// $panel-header-adjust: true;
+$panel-header-adjust: true;
 // $callout-panel-link-color: $primary-color;
 
 // 22. Pricing Tables
@@ -1136,7 +1136,7 @@ $side-nav-list-margin: rem-calc(0 0 0 0);
 // $side-nav-link-bg-hover: hsla(0, 0, 0, 0.025);
 // $side-nav-link-margin: 0;
 $side-nav-link-padding: rem-calc(2 4);
-// $side-nav-font-size: rem-calc(14);
+$side-nav-font-size: rem-calc(16);
 // $side-nav-font-weight: $font-weight-normal;
 // $side-nav-font-weight-active: $side-nav-font-weight;
 // $side-nav-font-family: $body-font-family;
@@ -1319,11 +1319,11 @@ $side-nav-link-padding: rem-calc(2 4);
 // $include-html-media-classes: $include-html-classes;
 
 // We use these to control border styles
-// $thumb-border-style: solid;
-// $thumb-border-width: 4px;
+$thumb-border-style: solid;
+$thumb-border-width: 0px;
 // $thumb-border-color: $white;
-// $thumb-box-shadow: 0 0 0 1px rgba($black,.2);
-// $thumb-box-shadow-hover: 0 0 6px 1px rgba($primary-color,0.5);
+$thumb-box-shadow: 5px 5px 2px 0px rgba($primary-color,0.2);
+$thumb-box-shadow-hover: 0px 0px 6px 1px rgba($primary-color,0.4);
 
 // Radius and transition speed for thumbs
 // $thumb-radius: $global-radius;
@@ -1362,11 +1362,11 @@ $side-nav-link-padding: rem-calc(2 4);
 $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: $white;
+$topbar-bg: url(/assets/top-bar.png);;
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 86px;
 $topbar-margin-bottom: 50px;
 
 // Controlling the styles for the title in the top bar
@@ -1374,7 +1374,7 @@ $topbar-margin-bottom: 50px;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
+$topbar-dropdown-bg: none;
 // $topbar-dropdown-link-color: $body-bg;
 // $topbar-dropdown-link-bg: $oil;
 // $topbar-dropdown-link-weight: $font-weight-normal;
@@ -1383,26 +1383,26 @@ $topbar-margin-bottom: 50px;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: $white;
-// $topbar-link-color-hover: $white;
+$topbar-link-color: #404040;
+$topbar-link-color-hover: #555555;
 // $topbar-link-color-active: $white;
 // $topbar-link-color-active-hover: $white;
-// $topbar-link-weight: $font-weight-normal;
-// $topbar-link-font-size: rem-calc(13);
+$topbar-link-weight: bold;
+$topbar-link-font-size: rem-calc(17);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg: $topbar-bg;
+$topbar-link-bg: url(/assets/button-white.png);
 // $topbar-link-bg-color-hover: $charcoal;
-// $topbar-link-bg-hover: #272727;
-// $topbar-link-bg-active: $primary-color;
-// $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
-// $topbar-link-font-family: $body-font-family;
+$topbar-link-bg-hover: url(/assets/button-white-hover.png);
+// $topbar-link-bg-active: url(/assets/button.png);
+// $topbar-link-bg-active-hover: url(/assets/button.png);
+$topbar-link-font-family: $body-font-family;
 // $topbar-link-text-transform: none;
-// $topbar-link-padding: $topbar-height / 3;
+$topbar-link-padding: 0;
 // $topbar-back-link-size: $h5-font-size;
-// $topbar-link-dropdown-padding: 20px;
+$topbar-link-dropdown-padding: 20px;
 
 // $topbar-button-font-size: 0.75rem;
-// $topbar-button-top: 7px;
+// $topbar-button-top: 0px;
 
 // $topbar-dropdown-label-color: $monsoon;
 // $topbar-dropdown-label-text-transform: uppercase;

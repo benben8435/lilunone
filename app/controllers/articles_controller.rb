@@ -7,6 +7,10 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
 
     if @article.save
+      if @article.title == ""
+        @article.tag_list.add("Tweet")
+        @article.save
+      end
       redirect_to @article
     else
       render 'new'

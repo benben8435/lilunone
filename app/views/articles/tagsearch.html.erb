@@ -2,3 +2,4 @@
 <%= link_to 'New article', new_article_path %>
 <%= render partial: "list", locals: {articles: Article.tagged_with(@filter)} %>
 <%= render partial: "tag_list" %>
+<%= render 'footer' %> 
