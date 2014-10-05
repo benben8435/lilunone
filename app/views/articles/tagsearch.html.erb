@@ -1,5 +1,54 @@
-<h1>Listing Articles</h1>
-<%= link_to 'New article', new_article_path %>
-<%= render partial: "list", locals: {articles: Article.tagged_with(@filter)} %>
-<%= render partial: "tag_list" %>
+<style>
+.thumbnail
+{
+  width: 200px;
+  position: relative;
+}
+.thumbnail a
+{
+  opacity: 1;
+  text-align: center;
+}
+.thumbnail:hover a
+{
+  opacity: 0.4;
+}
+.thumbnail span
+{
+  display: none;
+  text-decoration: none;
+}
+.thumbnail:hover span
+{
+  display: block; 
+  width: 160px; 
+  opacity: 1; 
+  position: absolute;
+  left: 20px;
+  top: 50px;
+  text-align: center;
+  z-index: 100;
+}
+
+</style>
+<%= render 'top' %>
+
+<!-- <div class="row">
+  <h1 class="text-center columns">Poooosts</h1>
+  <br><br><br><br><br>
+</div> -->
+<br><br><br>
+<div class="row">
+  <div class="small-3 columns">
+    <ul class="side-nav"><%= render partial: "tag_list" %></ul>
+  </div>
+  <ul class="small-13 columns small-block-grid-3"><%= render partial: "list", locals: {articles: Article.tagged_with(@filter)} %></ul>
+</div>
 <%= render 'footer' %> 
+
+
+  
+
+
+
+
