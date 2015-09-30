@@ -1,4 +1,7 @@
 Blog::Application.routes.draw do
+  get "user/index"
+  get "user/show"
+  devise_for :users, controllers: { registrations: "users/registrations" }
   resources :articles do
     get 'tagsearch', on: :collection
     resources :comments

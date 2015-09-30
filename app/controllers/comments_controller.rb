@@ -1,10 +1,16 @@
 class CommentsController < ApplicationController
-  http_basic_authenticate_with name: "benben8435", password: "yyggnnhh", 
-    only: :destroy
-  
+  before_action :authenticate_user!, only: :destroy
+  before_action :authenticate_admin, only: :destroy
+
   def create
     @article = Article.find(params[:article_id])
     @comment = @article.comments.create(comment_params)
+    if (user_signed_in?)
+      @comment.commenter = current_user.name
+    else
+      @comment.commenter = "Anonymous"
+    end
+    @comment.save
     redirect_to article_path(@article)
   end
  
@@ -17,6 +23,11 @@ class CommentsController < ApplicationController
  
   private
     def comment_params
-      params.require(:comment).permit(:commenter, :body)
+      params.require(:comment).permit(:body)
+    end
+    def authenticate_admin
+      unless current_user.authority == 2
+        redirect_to :back
+      end
     end
 end

@@ -8,7 +8,7 @@
   }
   .blog
   {
-    background-image: url(/assets/logo.png);
+    background-image: url(/assets/logoo.png);
     display: block;
     position: absolute;
     top: 5%; left: 15%;
@@ -16,19 +16,16 @@
   }
   .blog:hover
   {
-    background-image: url(/assets/logo_hover.png);
+    background-image: url(/assets/logo_h.png);
     display: block;
     position: absolute;
     top: 5%; left: 15%;
     width: 118px; height: 255px;
   }
-  .blog:hover a
-  {
-    display: block;
-    width: 100%; height: 100%;
-  }
 </style>
 <embed src="/assets/gsls.mp3" width=0 height=0 type=audio/mpeg loop="true">
-<div class="blog">
-<%= link_to "", controller: 'articles' %>
-</div>
+
+<%= link_to articles_path do %>
+  <div class="blog"></div>
+<% end %>
+

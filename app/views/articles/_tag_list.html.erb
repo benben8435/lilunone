@@ -1,6 +1,8 @@
-<div class="text-center"><strong>Tags</strong></div>
-<li><%= link_to "#All", articles_path %></li>
-<% Article.tag_counts.each do |info_tag| %>
-  <li><%= link_to "##{info_tag}", tagsearch_articles_path( :name => info_tag.name ) %></li>
-<% end %>
+           
+<ul class="side-nav">
+  <li><%= link_to "#All Tags", articles_path %></li>
+  <% Article.tag_counts.each do |info_tag| %>
+    <li><%= link_to "##{info_tag}", tagsearch_articles_path( :name => info_tag.name ) %></li>
+  <% end %>
+</ul>
 

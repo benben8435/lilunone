@@ -1,13 +1,7 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <fieldset>
-    <legend class="text-center" style="font-size: 1.1rem; color:#AAAAAA">Creating Comments</legend>
-
-    <label>Commenter
-      <%= f.text_field :commenter %>
-    </label>
-    <label>Body
+    <legend class="text-center" style="font-size: 1.1rem; color:#AAAAAA">Leaving a Comment</legend>
       <%= f.text_area :body, rows: 10 %>
-    </label>
     <p class="text-right" style="margin-top: 30px">
       <%= f.submit " Submit " , class: 'button' %>
     </p>

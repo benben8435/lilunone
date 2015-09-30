@@ -23,13 +23,15 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
+gem 'foundation-icons-sass-rails'
 gem 'acts-as-taggable-on'
 gem 'will_paginate'
 gem "paperclip", "~> 3.5.3"
 gem 'mp3_player'
 gem 'foundation-rails'
+gem 'devise'
 
+gem 'yaml_db'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 

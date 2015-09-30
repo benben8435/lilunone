@@ -1,4 +1,4 @@
-<% articles.each do |article| %>
+<% articles.reverse_each do |article| %>
   <li>
     <div class="thumbnail">
     <%= link_to image_tag(article.photo.url(:small)), 

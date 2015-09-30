@@ -31,20 +31,28 @@
 }
 
 </style>
-<%= render 'top' %>
 
-<!-- <div class="row">
-  <h1 class="text-center columns">Poooosts</h1>
-  <br><br><br><br><br>
-</div> -->
-<br><br><br>
-<div class="row">
-  <div class="small-3 columns">
-    <ul class="side-nav"><%= render partial: "tag_list" %></ul>
+  <div class="off-canvas-wrap" data-offcanvas>
+    <div class="inner-wrap">
+
+      <a class="left-off-canvas-toggle" href="#" ><i class="fi-pricetag-multiple" style="font-size: 2rem; "></i></a>
+
+      <!-- Off Canvas Menu -->
+      <aside class="left-off-canvas-menu">
+          <!-- whatever you want goes here -->
+          <%= render "tag_list" %>
+      </aside>
+      <!-- main content goes here -->
+      <ul class="small-12 columns small-centered small-block-grid-1 medium-block-grid-2 large-block-grid-3"><%= render partial: "list", locals: {articles: @articles} %></ul>
+    <!-- close the off-canvas menu -->
+    <a class="exit-off-canvas"></a>
+    </div>
   </div>
-  <ul class="small-13 columns small-block-grid-3"><%= render partial: "list", locals: {articles: @articles} %></ul>
-</div>
-<%= render 'footer' %> 
+
+
+
+
+
 
 
   

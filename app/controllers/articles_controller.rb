@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
+  before_action :check_author, only: [:new, :create, :update, :edit, :destroy]
   def new
     @article = Article.new
   end
@@ -47,9 +49,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
   end
-  
-  http_basic_authenticate_with name: "benben8435", password: "yyggnnhh", 
-    except: [:index, :show, :tagsearch]
+
  
   def index
     @articles = Article.all
@@ -59,4 +59,11 @@ class ArticlesController < ApplicationController
     def article_params
       params.require(:article).permit(:title, :text, :photo, :tag_list, :audio)
     end
+
+    def check_author
+      unless current_user.authority == 2
+        redirect_to :back, notice: "Permission Denied :( "
+      end
+    end
+
 end

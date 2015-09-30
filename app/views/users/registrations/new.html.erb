@@ -1,0 +1,48 @@
+<h2 class="text-center">Sign up</h2>
+<div class="panel small-10 small-centered columns">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="row collapse">
+    <div class="small-5 columns">
+      <span class="prefix">Email</span>
+    </div>
+    <div class="small-11 columns">
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+  </div>
+  <div class="row collapse">
+    <div class="small-5 columns">
+      <span class="prefix">Name</span>
+    </div>
+    <div class="small-11 columns">
+      <%= f.text_field :name %>
+    </div>
+  </div>
+  <div class="row collapse">
+    <div class="small-5 columns">
+      <span class="prefix">Password</span>
+    </div>
+    <div class="small-11 columns">
+      
+      <%= f.password_field :password, autocomplete: "off", placeholder: @minimum_password_length.to_s + " characters minimum" %>
+    </div>
+  </div>
+
+  <div class="row collapse">
+    <div class="small-5 columns">
+      <span class="prefix">Pwd Confirmation</span>
+    </div>
+    <div class="small-11 columns">
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
+  </div>
+
+  <p class="text-right" style="margin-top: 30px">
+      <%= f.submit " Sign Up " , class: 'button' %>
+      <br>
+      <%= render "users/shared/links" %>
+  </p>
+  <% end %>
+</div>
+
